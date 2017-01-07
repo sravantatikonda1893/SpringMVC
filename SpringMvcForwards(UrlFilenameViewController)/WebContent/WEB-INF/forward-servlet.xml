@@ -1,0 +1,15 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springfranework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<!-- this view resolver should be used for simple forward options which should match the  request action url with the
+output file -->
+<bean name="/hello.s" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+<bean name="/hai.s" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/> 
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="prefix" value="/WEB-INF/jsp/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

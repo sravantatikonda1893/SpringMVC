@@ -1,0 +1,19 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springfranework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<!-- This mapping is done by reference -->
+	<bean class="or.springframework.we.servlet.handle.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/hello.s">hc</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="hc" class="controller.HelloController" />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

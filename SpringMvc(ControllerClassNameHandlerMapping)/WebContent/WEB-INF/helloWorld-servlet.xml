@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springfranework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- This mapping id done by mentioning the same class name of controller 
+		with the url(first 4 letters 'hello' -->
+	<bean
+		class="or.springframework.web.servlet.handler.ControllerClassNameHandlerMapping" />
+	<bean class="controller.HelloController" />
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

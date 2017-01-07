@@ -1,0 +1,38 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springfranework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- Rather than having multiple controller for multi forms. we can handle 
+		two different forms from the same controller class which extends from MultiActionController 
+		class and maintaining the method names as the action request url's -->
+	<bean class="or.springframework.we.servlet.handle.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/empsave.s">EmpCrud</prop>
+				<prop key="/empupdate.s">EmpCrud</prop>
+			</props>
+		</property>
+	</bean>
+<!-- For using the custom methods these configuration is required -->
+	<bean id="EmpCrud" class="controller.EmpCrudController">
+		<property name="methodNameResolver">
+			<bean
+				class="org.springframework.web.servlet.mvc.mutliaction.InternalPathMethodNameResolver">
+				<property name="prefix" value="sravan" />
+				<property name="suffix" value="tatikonda" />
+
+
+			</bean>
+
+
+		</property>
+
+	</bean>
+
+	<!--View Resolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>

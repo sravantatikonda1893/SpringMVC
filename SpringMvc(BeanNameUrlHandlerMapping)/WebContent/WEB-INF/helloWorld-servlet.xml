@@ -1,0 +1,15 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+"http://www.springfranework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+<!--We dont need to configure the default handler mapping which is internally used
+when we dont specify explicitly for mapping this request url to some controller
+And the defalut handler name is BeanNameUrlHandlerMapping -->
+
+<bean name="/hello.s" class="controller.HelloController"/>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+<property name="prefix" value="/"></property>
+<property name="suffix" value=".jsp"></property>
+</bean>
+</beans>
