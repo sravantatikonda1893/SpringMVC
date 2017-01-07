@@ -1,0 +1,1 @@
+<h1>Hello from  spring mvc -SRAVAN TATIKONDA</h1>
